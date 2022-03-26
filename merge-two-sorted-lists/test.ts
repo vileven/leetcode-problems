@@ -1,7 +1,7 @@
 import {ListNode} from './index';
 import compare1by1MergeKLists from './compare1by1';
 
-describe('mergeTwoLists with heap', function () {
+describe('mergeTwoLists', function () {
 	const returnTestData = () => {
 		const list1_3: ListNode = {val: 4, next: null};
 		const list1_2: ListNode = {val: 2, next: list1_3};

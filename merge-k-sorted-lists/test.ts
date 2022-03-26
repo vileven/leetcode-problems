@@ -3,7 +3,7 @@ import compare1by1MergeKLists from './compare1by1';
 import divedAndConquerMergeKLists from './divideAndConquer';
 import {ListNode} from './index';
 
-describe('mergeKLists with heap', function () {
+describe('mergeKLists', function () {
 	const returnTestData = () => {
 		// [[1,4,5],[1,3,4],[2,6]]
 		const list1_3: ListNode = {val: 5, next: null};
@@ -51,5 +51,18 @@ describe('mergeKLists with heap', function () {
 		expect(divedAndConquerMergeKLists(testData)).toStrictEqual(
 			expectedResult,
 		);
+	});
+
+	it('should  with divide and conquer method []', function () {
+		expect(divedAndConquerMergeKLists([])).toStrictEqual(null);
+	});
+
+	it('should work with  divide and conquer method [[], [1]]', function () {
+		expect(
+			divedAndConquerMergeKLists([null, {val: 1, next: null}]),
+		).toStrictEqual({
+			val: 1,
+			next: null,
+		});
 	});
 });

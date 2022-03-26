@@ -4,9 +4,7 @@ import mergeTwoLists from '../merge-two-sorted-lists/compare1by1';
 // time O(N*log(k))
 // space O(1)
 function mergeKLists(lists: Array<ListNode | null>): any {
-	let N = lists.length;
-
-	while (N !== 1) {
+	for (let N = lists.length; N > 1; N = Math.ceil(N / 2)) {
 		// iterate each 2
 		let listsIndex = 0;
 		for (let i = 0; i < N; i += 2) {
@@ -15,13 +13,16 @@ function mergeKLists(lists: Array<ListNode | null>): any {
 				continue;
 			}
 
+			if (!lists[i]) {
+				lists[listsIndex++] = lists[i + 1];
+				continue;
+			}
+
 			lists[listsIndex++] = mergeTwoLists(lists[i], lists[i + 1]);
 		}
-
-		N = Math.ceil(N / 2);
 	}
 
-	return lists[0];
+	return lists[0] || null;
 }
 
 export default mergeKLists;
