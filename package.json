@@ -10,8 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/vileven/leetcode-problems.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "leetcode",
+    "algorithm"
+  ],
+  "author": "Sergei Volodin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vileven/leetcode-problems/issues"
