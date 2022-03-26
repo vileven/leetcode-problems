@@ -1,5 +1,6 @@
 import heapMergeKLists from './heap';
 import compare1by1MergeKLists from './compare1by1';
+import divedAndConquerMergeKLists from './divideAndConquer';
 import {ListNode} from './index';
 
 describe('mergeKLists with heap', function () {
@@ -42,5 +43,13 @@ describe('mergeKLists with heap', function () {
 		const [testData, expectedResult] = returnTestData();
 
 		expect(heapMergeKLists(testData)).toStrictEqual(expectedResult);
+	});
+
+	it('should work with divide and conquer method', () => {
+		const [testData, expectedResult] = returnTestData();
+
+		expect(divedAndConquerMergeKLists(testData)).toStrictEqual(
+			expectedResult,
+		);
 	});
 });
