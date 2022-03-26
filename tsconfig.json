@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
