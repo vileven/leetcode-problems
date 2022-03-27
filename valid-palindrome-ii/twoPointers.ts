@@ -38,7 +38,6 @@ function checkPalindromeWithIndexAnd1Deleting(
 
 		forwardIndex++;
 		reverseIndex--;
-		isPalindrome = true;
 	}
 
 	return isPalindrome;
