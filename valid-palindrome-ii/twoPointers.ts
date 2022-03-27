@@ -13,9 +13,8 @@ function checkPalindromeWithIndexAnd1Deleting(
 	let isPalindrome = true;
 	let resultForward = false;
 	let resultReverse = false;
-	const middleIndex = Math.floor(s.length / 2);
 
-	while (forwardIndex < middleIndex || reverseIndex > middleIndex) {
+	while (forwardIndex < reverseIndex) {
 		if (s[forwardIndex] !== s[reverseIndex]) {
 			if (!only1removingEnabled) {
 				resultForward = checkPalindromeWithIndexAnd1Deleting(
