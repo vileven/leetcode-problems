@@ -1,3 +1,6 @@
+/**
+ * O (n*Log(n))
+ */
 function merge(intervals: number[][]): number[][] {
 	let lastStart = null;
 	let lastEnd = null;
@@ -6,7 +9,7 @@ function merge(intervals: number[][]): number[][] {
 		.sort((a, b) => {
 			return a[0] < b[0] ? -1 : 1;
 		})
-		.reduce<number[][]>((acc, [start, end], index, array) => {
+		.reduce<number[][]>((acc, [start, end]) => {
 			if (lastStart === null) {
 				lastStart = start;
 			}
