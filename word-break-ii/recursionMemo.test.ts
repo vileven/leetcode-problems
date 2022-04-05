@@ -1,4 +1,4 @@
-import wordBreak from './dynamicProgramming';
+import wordBreak from './recursionMemo';
 
 describe('word-break dynamicProgramming', () => {
 	it('should work with example 1', () => {
