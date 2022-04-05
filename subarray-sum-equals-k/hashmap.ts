@@ -5,7 +5,7 @@
  */
 
 //s[j] - s[i] = k -> s[j] - k = s[i]
-
+// j > i -> we can go through array with j and check previous calculations of i in map
 function subarraySum(nums: number[], k: number): number {
 	let count = 0,
 		sum = 0;
