@@ -3,7 +3,7 @@ function squareEuclideanDistance([x, y]: number[]) {
 }
 
 function partition(points: number[][], left: number, right: number): number {
-	const pivotIndex = left + Math.floor(Math.random() * (right - left + 1));
+	const pivotIndex = (right + left + 1) >> 1;
 	const pivotDist = squareEuclideanDistance(points[pivotIndex]);
 
 	while (left <= right) {
