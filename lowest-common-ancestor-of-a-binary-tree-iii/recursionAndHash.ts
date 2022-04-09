@@ -13,6 +13,7 @@ function findLCA(node: Node | null, visited: Set<Node>) {
 	return findLCA(node.parent, visited);
 }
 
+//
 function lowestCommonAncestor(p: Node | null, q: Node | null): Node | null {
 	if (p.parent === q.parent) {
 		return p.parent;
