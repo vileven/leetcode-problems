@@ -13,7 +13,11 @@ function findLCA(node: Node | null, visited: Set<Node>) {
 	return findLCA(node.parent, visited);
 }
 
-//
+/**
+ * let's say that h — distance between root and deepest(p,q)
+ * time — O(h)
+ * space — O(h)
+ */
 function lowestCommonAncestor(p: Node | null, q: Node | null): Node | null {
 	if (p.parent === q.parent) {
 		return p.parent;
