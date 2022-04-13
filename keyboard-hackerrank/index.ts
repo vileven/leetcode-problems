@@ -15,9 +15,8 @@ export default function entryTime(s: string, keypad: string): number {
 
 	let result = 0;
 
-	for (let i = 1, previousChar = i; i < s.length; i++) {
-		result += calculateSeconds(previousChar, i, keypad);
-		previousChar = i;
+	for (let i = 1; i < s.length; i++) {
+		result += calculateSeconds(i - 1, i, keypad);
 	}
 
 	return result;
