@@ -8,9 +8,6 @@ const PRECEDENCE_MAP = {
 	[UNARY_MINUS]: 2,
 } as const;
 
-/**
- * thats seems strange but just for passing leetcode testcases :)
- */
 function jsDivide(a: number, b: number): number {
 	if (a * b > 0) {
 		return Math.floor(a / b);
@@ -30,27 +27,27 @@ function comparePrecedence(operator1: string, operator2: string): number {
 function operate(operands: number[], operators: string[]) {
 	const operation = operators.pop();
 
+	if (operation === UNARY_MINUS) {
+		return -operands.pop();
+	}
+
+	const a = operands.pop();
+	const b = operands.pop();
+
 	switch (operation) {
-		case UNARY_MINUS:
-			return -operands.pop();
 		case '+':
-			return operands.pop() + operands.pop();
+			return a + b;
 		case '-':
-			return operands.pop() - operands.pop();
+			return b - a;
 		case '*':
-			return operands.pop() * operands.pop();
+			return a * b;
 		case '/':
-			return jsDivide(operands.pop(), operands.pop());
+			return jsDivide(b, a);
 		default:
 			return 0;
 	}
 }
 
-/**
- * It is common algorithm to convert infix notion to reverse polish notation (RPN)
- * and processing through on go
- * @see https://en.wikipedia.org/wiki/Shunting-yard_algorithm
- */
 function calculate(s: string): number {
 	const operandsStack: number[] = [];
 	const operatorsStack: string[] = [];
