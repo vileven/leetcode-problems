@@ -9,12 +9,6 @@ export class Node {
 	}
 }
 
-function addToList(node: Node, list: {head: Node}) {
-	const {head} = list;
-
-	head.right = node;
-}
-
 function dfs(node: Node, list: {head: Node; tail: Node}) {
 	if (node === null) {
 		return;
