@@ -1,4 +1,4 @@
-class Heap {
+export class Heap {
 	data = [];
 
 	size(): number {

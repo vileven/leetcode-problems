@@ -1,6 +1,6 @@
 type Comparator<T> = (a: T, b: T) => number;
 
-class Heap<T = number> {
+export class Heap<T = number> {
 	private data: T[] = [];
 
 	private compare: Comparator<T>;
