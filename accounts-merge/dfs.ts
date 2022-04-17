@@ -28,17 +28,17 @@ function dfs(
  * but in worst cas it takes Log NK, so total big O —
  * O(NK)
  */
-function accountsMerge(accounts: string[][]): string[][] {
+export function accountsMerge(accounts: string[][]): string[][] {
 	const graphStructure: {[email: string]: string[]} = {};
 
-	accounts.forEach((account) => {
+	accounts.forEach(account => {
 		const [, firstEmail, ...emails] = account;
 
 		if (!graphStructure.hasOwnProperty(firstEmail)) {
 			graphStructure[firstEmail] = [];
 		}
 
-		emails.forEach((email) => {
+		emails.forEach(email => {
 			// adding edge from firstEmail to email
 			graphStructure[firstEmail].push(email);
 
@@ -53,7 +53,7 @@ function accountsMerge(accounts: string[][]): string[][] {
 	const visited = {};
 
 	const mergedAccounts = [];
-	accounts.forEach((account) => {
+	accounts.forEach(account => {
 		const [name, firstEmail] = account;
 
 		if (!visited[firstEmail]) {
