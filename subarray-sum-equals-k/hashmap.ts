@@ -1,5 +1,5 @@
 /**
- * O(n^2)
+ * O(n)
  * @param nums
  * @param k
  */
