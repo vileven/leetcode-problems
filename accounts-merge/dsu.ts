@@ -57,9 +57,12 @@ class UnionFind {
  * O(NK)
  */
 function accountsMerge(accounts: string[][]): string[][] {
+	// setting uf for all emails
 	const uf = new UnionFind(accounts.length);
 	const emailsToGroup = {};
 
+	// in this cycle, we are making union for uf when needed
+	// and set for each group it's index
 	accounts.forEach((account, accountIndex) => {
 		const [, ...emails] = account;
 
