@@ -1,5 +1,5 @@
-const ZERO_CODE = '0'.charCodeAt(0);
-const NINE_CODE = '9'.charCodeAt(0);
+export const ZERO_CODE = '0'.charCodeAt(0);
+export const NINE_CODE = '9'.charCodeAt(0);
 const a_CODE = 'a'.charCodeAt(0);
 const z_CODE = 'z'.charCodeAt(0);
 const A_CODE = 'A'.charCodeAt(0);
