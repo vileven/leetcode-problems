@@ -1,4 +1,4 @@
-class UnionFind {
+export class UnionFind {
 	root: number[] = [];
 	rank: number[] = [];
 
