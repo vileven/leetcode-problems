@@ -8,8 +8,18 @@ function quickSort(array: number[], from: number, to: number) {
 	return array;
 }
 
+function quickSortLomuto(array: number[], from: number, to: number) {
+	if (from < to) {
+		const pivotIndex = partition(array, from, to);
+		quickSort(array, from, pivotIndex - 1);
+		quickSort(array, pivotIndex + 1, to);
+	}
+
+	return array;
+}
+
 /**
- * it is Hoare partition scheme (a bit better than Lomuto)
+ * it is Hoare partition scheme (a bit better than Lomuto if we count swaps number)
  *
  * example of working
  * 4,5,6,7,2,10 - pivot is 7
