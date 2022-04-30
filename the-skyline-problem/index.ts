@@ -51,12 +51,10 @@ function merge(left: number[][], right: number[][]): number[][] {
 
 		// pick up the smallest x
 		if (pointL[0] < pointR[0]) {
-			x = pointL[0];
-			leftY = pointL[1];
+			[x, leftY] = pointL;
 			pL++;
 		} else {
-			x = pointR[0];
-			rightY = pointR[1];
+			[x, rightY] = pointR;
 			pR++;
 		}
 
