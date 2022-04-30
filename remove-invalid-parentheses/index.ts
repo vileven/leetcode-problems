@@ -1,5 +1,5 @@
 function removeInvalidParentheses(s: string): string[] {
-	const result = {};
+	const result: Set<string> = new Set();
 
 	const n = s.length;
 
@@ -29,7 +29,7 @@ function removeInvalidParentheses(s: string): string[] {
 	) => {
 		if (i === n) {
 			if (openToFix === 0 && closeToFix === 0 && balance === 0) {
-				result[acc.join('')] = true;
+				result.add(acc.join(''));
 			}
 			return;
 		}
@@ -65,7 +65,7 @@ function removeInvalidParentheses(s: string): string[] {
 
 	backtrack();
 
-	return Object.keys(result);
+	return [...result.keys()];
 }
 
 export default removeInvalidParentheses;
