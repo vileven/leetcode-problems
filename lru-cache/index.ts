@@ -1,4 +1,4 @@
-interface MyNode {
+export interface MyNode {
 	key: number;
 	val: number;
 	next: MyNode | null;
