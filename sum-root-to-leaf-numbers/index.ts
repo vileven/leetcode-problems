@@ -1,26 +1,25 @@
 import {TreeNode} from '../binary-tree-vertical-order-traversal';
 
-function dfs(node: TreeNode | null, path: string, acc: number[]) {
+function dfs(node: TreeNode | null, curNumber: number, acc: {sum: number}) {
 	if (node === null) {
 		return;
 	}
 
-	path += node.val.toString();
+	curNumber = curNumber * 10 + node.val;
 
 	// it is a leaf!
 	if (!node.left && !node.right) {
-		acc.push(Number(path));
+		acc.sum += curNumber;
 		return;
 	}
 
-	dfs(node.left, path, acc);
-	dfs(node.right, path, acc);
+	dfs(node.left, curNumber, acc);
+	dfs(node.right, curNumber, acc);
 }
 
 function sumNumbers(root: TreeNode | null): number {
-	const sum = [];
+	const acc = {sum: 0};
+	dfs(root, 0, acc);
 
-	dfs(root, '', sum);
-
-	return sum.reduce((sum, el) => sum + el, 0);
+	return acc.sum;
 }
