@@ -91,6 +91,7 @@ function calculate(s: string): number {
 		while (
 			operatorsStack.length &&
 			comparePrecedence(
+				//char precedence is less or equal than in stack — calculate
 				char,
 				operatorsStack[operatorsStack.length - 1],
 			) <= 0
